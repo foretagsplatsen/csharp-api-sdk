@@ -254,7 +254,9 @@ namespace FortnoxAPILibrary
                                     }
                                     catch (Exception e)
                                     {
-                                        throw new Exception("An error occured while deserializing the response. Check ResponseXML.", e.InnerException);
+                                         throw new ParseXmlResponseException(
+											"An error occured while deserializing the response. Check ResponseXML.",
+											ResponseXml, e.InnerException);
                                     }
                                 }
                             }
